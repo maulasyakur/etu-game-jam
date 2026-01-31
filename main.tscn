@@ -1,8 +1,9 @@
-[gd_scene load_steps=28 format=4 uid="uid://bk68wfu7nw01"]
+[gd_scene load_steps=7 format=4 uid="uid://bk68wfu7nw01"]
 
 [ext_resource type="Texture2D" uid="uid://cbgc4p0fgpsm" path="res://brackeys_platformer_assets/sprites/world_tileset.png" id="1_h2yge"]
-[ext_resource type="Script" uid="uid://bw42qq7dihb1v" path="res://player.gd" id="2_1bvp3"]
-[ext_resource type="Texture2D" uid="uid://c4srfyc4ylywf" path="res://brackeys_platformer_assets/sprites/knight.png" id="3_lquwl"]
+[ext_resource type="PackedScene" uid="uid://64301svl7id2" path="res://player.tscn" id="2_0xm2m"]
+[ext_resource type="Texture2D" uid="uid://8gsnciwpwmsq" path="res://Pale/clouds1.png" id="3_1bvp3"]
+[ext_resource type="Texture2D" uid="uid://ctnwhhq68olr" path="res://Pale/ground&houses2.png" id="4_lquwl"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_7mycd"]
 texture = ExtResource("1_h2yge")
@@ -141,177 +142,29 @@ uv_clipping = true
 physics_layer_0/collision_layer = 1
 sources/0 = SubResource("TileSetAtlasSource_7mycd")
 
-[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_5vw27"]
-radius = 5.12
-height = 19.25
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_kek77"]
-atlas = ExtResource("3_lquwl")
-region = Rect2(0, 0, 32, 32)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_4c57u"]
-atlas = ExtResource("3_lquwl")
-region = Rect2(32, 0, 32, 32)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_efxa6"]
-atlas = ExtResource("3_lquwl")
-region = Rect2(64, 0, 32, 32)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_dg77c"]
-atlas = ExtResource("3_lquwl")
-region = Rect2(96, 0, 32, 32)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_ycdy4"]
-atlas = ExtResource("3_lquwl")
-region = Rect2(0, 64, 32, 32)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_w48qg"]
-atlas = ExtResource("3_lquwl")
-region = Rect2(32, 64, 32, 32)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_vivmo"]
-atlas = ExtResource("3_lquwl")
-region = Rect2(64, 64, 32, 32)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_2cqfq"]
-atlas = ExtResource("3_lquwl")
-region = Rect2(96, 64, 32, 32)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_yaehf"]
-atlas = ExtResource("3_lquwl")
-region = Rect2(128, 64, 32, 32)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_074og"]
-atlas = ExtResource("3_lquwl")
-region = Rect2(160, 64, 32, 32)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_cegan"]
-atlas = ExtResource("3_lquwl")
-region = Rect2(192, 64, 32, 32)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_82xsv"]
-atlas = ExtResource("3_lquwl")
-region = Rect2(224, 64, 32, 32)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_getpj"]
-atlas = ExtResource("3_lquwl")
-region = Rect2(0, 96, 32, 32)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_ryguw"]
-atlas = ExtResource("3_lquwl")
-region = Rect2(32, 96, 32, 32)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_d13ii"]
-atlas = ExtResource("3_lquwl")
-region = Rect2(64, 96, 32, 32)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_1u8w0"]
-atlas = ExtResource("3_lquwl")
-region = Rect2(96, 96, 32, 32)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_0odxb"]
-atlas = ExtResource("3_lquwl")
-region = Rect2(128, 96, 32, 32)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_lswn8"]
-atlas = ExtResource("3_lquwl")
-region = Rect2(160, 96, 32, 32)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_a6jrf"]
-atlas = ExtResource("3_lquwl")
-region = Rect2(192, 96, 32, 32)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_xuqvo"]
-atlas = ExtResource("3_lquwl")
-region = Rect2(224, 96, 32, 32)
-
-[sub_resource type="SpriteFrames" id="SpriteFrames_qsp4k"]
-animations = [{
-"frames": [{
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_kek77")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_4c57u")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_efxa6")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_dg77c")
-}],
-"loop": true,
-"name": &"default",
-"speed": 5.0
-}, {
-"frames": [{
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_ycdy4")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_w48qg")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_vivmo")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_2cqfq")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_yaehf")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_074og")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_cegan")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_82xsv")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_getpj")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_ryguw")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_d13ii")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_1u8w0")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_0odxb")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_lswn8")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_a6jrf")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_xuqvo")
-}],
-"loop": true,
-"name": &"run",
-"speed": 10.0
-}]
-
 [node name="Main" type="Node2D"]
 
 [node name="TileMapLayer" type="TileMapLayer" parent="."]
-tile_map_data = PackedByteArray("AAAAAAcAAAAAAAAAAAABAAcAAAAAAAAAAAACAAcAAAAAAAAAAAADAAcAAAAAAAAAAAAEAAcAAAAAAAAAAAAFAAcAAAAAAAAAAAAGAAcAAAAAAAAAAAAHAAcAAAAAAAAAAAAIAAcAAAAAAAAAAAAJAAcAAAAAAAAAAAAKAAcAAAAAAAAAAAALAAcAAAAAAAAAAAAMAAcAAAAAAAAAAAANAAcAAAAAAAAAAAAOAAcAAAAAAAAAAAAPAAcAAAAAAAAAAAAQAAcAAAAAAAAAAAARAAcAAAAAAAAAAAASAAcAAAAAAAAAAAATAAcAAAAAAAAAAAATAAsAAAAAAAEAAAASAAsAAAAAAAEAAAARAAsAAAAAAAEAAAAQAAsAAAAAAAEAAAAPAAsAAAAAAAEAAAAOAAsAAAAAAAEAAAANAAsAAAAAAAEAAAAMAAsAAAAAAAEAAAALAAsAAAAAAAEAAAAKAAsAAAAAAAEAAAAJAAsAAAAAAAEAAAAIAAsAAAAAAAEAAAAHAAsAAAAAAAEAAAAGAAsAAAAAAAEAAAAFAAsAAAAAAAEAAAAEAAsAAAAAAAEAAAADAAsAAAAAAAEAAAACAAsAAAAAAAEAAAABAAsAAAAAAAEAAAAAAAsAAAAAAAEAAAAAAAoAAAAAAAEAAAAAAAkAAAAAAAEAAAAAAAgAAAAAAAEAAAABAAgAAAAAAAEAAAACAAgAAAAAAAEAAAADAAgAAAAAAAEAAAAEAAgAAAAAAAEAAAAFAAgAAAAAAAEAAAAGAAgAAAAAAAEAAAAHAAgAAAAAAAEAAAAIAAgAAAAAAAEAAAAJAAgAAAAAAAEAAAAKAAgAAAAAAAEAAAALAAgAAAAAAAEAAAAMAAgAAAAAAAEAAAANAAgAAAAAAAEAAAAOAAgAAAAAAAEAAAAPAAgAAAAAAAEAAAAQAAkAAAAAAAEAAAARAAkAAAAAAAEAAAASAAkAAAAAAAEAAAASAAgAAAAAAAEAAAATAAgAAAAAAAEAAAATAAkAAAAAAAEAAAATAAoAAAAAAAEAAAASAAoAAAAAAAEAAAARAAgAAAAAAAEAAAAQAAgAAAAAAAEAAAARAAoAAAAAAAEAAAAQAAoAAAAAAAEAAAAPAAkAAAAAAAEAAAAOAAkAAAAAAAEAAAANAAkAAAAAAAEAAAAMAAkAAAAAAAEAAAALAAkAAAAAAAEAAAAKAAkAAAAAAAEAAAAJAAkAAAAAAAEAAAAIAAkAAAAAAAEAAAAHAAkAAAAAAAEAAAAGAAkAAAAAAAEAAAAFAAkAAAAAAAEAAAAEAAkAAAAAAAEAAAADAAkAAAAAAAEAAAACAAkAAAAAAAEAAAABAAkAAAAAAAEAAAABAAoAAAAAAAEAAAACAAoAAAAAAAEAAAADAAoAAAAAAAEAAAAEAAoAAAAAAAEAAAAFAAoAAAAAAAEAAAAGAAoAAAAAAAEAAAAHAAoAAAAAAAEAAAAIAAoAAAAAAAEAAAAJAAoAAAAAAAEAAAAKAAoAAAAAAAEAAAALAAoAAAAAAAEAAAAMAAoAAAAAAAEAAAANAAoAAAAAAAEAAAAOAAoAAAAAAAEAAAAPAAoAAAAAAAEAAAA=")
+tile_map_data = PackedByteArray("AAD0/w4AAAAAAAEAAAD0/w8AAAAAAAEAAAD0/xAAAAAAAAEAAAD1/w4AAAAAAAEAAAD1/w8AAAAAAAEAAAD1/xAAAAAAAAEAAAD2/w4AAAAAAAEAAAD2/w8AAAAAAAEAAAD2/xAAAAAAAAEAAAD3/w4AAAAAAAEAAAD3/w8AAAAAAAEAAAD3/xAAAAAAAAEAAAD4/w4AAAAAAAEAAAD4/w8AAAAAAAEAAAD4/xAAAAAAAAEAAAD5/w4AAAAAAAEAAAD5/w8AAAAAAAEAAAD5/xAAAAAAAAEAAAD6/w4AAAAAAAEAAAD6/w8AAAAAAAEAAAD6/xAAAAAAAAEAAAD7/w4AAAAAAAEAAAD7/w8AAAAAAAEAAAD7/xAAAAAAAAEAAAD8/w4AAAAAAAEAAAD8/w8AAAAAAAEAAAD8/xAAAAAAAAEAAAD9/w4AAAAAAAEAAAD9/w8AAAAAAAEAAAD9/xAAAAAAAAEAAAD+/w4AAAAAAAEAAAD+/w8AAAAAAAEAAAD+/xAAAAAAAAEAAAD//w4AAAAAAAEAAAD//w8AAAAAAAEAAAD//xAAAAAAAAEAAAAAAA4AAAAAAAEAAAAAAA8AAAAAAAEAAAAAABAAAAAAAAEAAAABAA4AAAAAAAEAAAABAA8AAAAAAAEAAAABABAAAAAAAAEAAAACAA4AAAAAAAEAAAACAA8AAAAAAAEAAAACABAAAAAAAAEAAAADAA4AAAAAAAEAAAADAA8AAAAAAAEAAAADABAAAAAAAAEAAAAEAA4AAAAAAAEAAAAEAA8AAAAAAAEAAAAEABAAAAAAAAEAAAAFAA4AAAAAAAEAAAAFAA8AAAAAAAEAAAAFABAAAAAAAAEAAAAGAA4AAAAAAAEAAAAGAA8AAAAAAAEAAAAGABAAAAAAAAEAAAAHAA4AAAAAAAEAAAAHAA8AAAAAAAEAAAAHABAAAAAAAAEAAAAIAA4AAAAAAAEAAAAIAA8AAAAAAAEAAAAIABAAAAAAAAEAAAAJAA4AAAAAAAEAAAAJAA8AAAAAAAEAAAAJABAAAAAAAAEAAAAKAA4AAAAAAAEAAAAKAA8AAAAAAAEAAAAKABAAAAAAAAEAAAALAA4AAAAAAAEAAAALAA8AAAAAAAEAAAALABAAAAAAAAEAAAAMAA4AAAAAAAEAAAAMAA8AAAAAAAEAAAAMABAAAAAAAAEAAAANAA4AAAAAAAEAAAANAA8AAAAAAAEAAAANABAAAAAAAAEAAAAOAA4AAAAAAAEAAAAOAA8AAAAAAAEAAAAOABAAAAAAAAEAAAAPAA4AAAAAAAEAAAAPAA8AAAAAAAEAAAAPABAAAAAAAAEAAAAQAA4AAAAAAAEAAAAQAA8AAAAAAAEAAAAQABAAAAAAAAEAAAARAA4AAAAAAAEAAAARAA8AAAAAAAEAAAARABAAAAAAAAEAAAASAA4AAAAAAAEAAAASAA8AAAAAAAEAAAASABAAAAAAAAEAAAATAA4AAAAAAAEAAAATAA8AAAAAAAEAAAATABAAAAAAAAEAAAAUAA4AAAAAAAEAAAAUAA8AAAAAAAEAAAAUABAAAAAAAAEAAAAVAA4AAAAAAAEAAAAVAA8AAAAAAAEAAAAVABAAAAAAAAEAAAAWAA4AAAAAAAEAAAAWAA8AAAAAAAEAAAAWABAAAAAAAAEAAAAXAA4AAAAAAAEAAAAXAA8AAAAAAAEAAAAXABAAAAAAAAEAAAAYAA4AAAAAAAEAAAAYAA8AAAAAAAEAAAAYABAAAAAAAAEAAAAZAA4AAAAAAAEAAAAZAA8AAAAAAAEAAAAZABAAAAAAAAEAAAAaAA4AAAAAAAEAAAAaAA8AAAAAAAEAAAAaABAAAAAAAAEAAAAbAA4AAAAAAAEAAAAbAA8AAAAAAAEAAAAbABAAAAAAAAEAAAAcAA4AAAAAAAEAAAAcAA8AAAAAAAEAAAAcABAAAAAAAAEAAAAdAA4AAAAAAAEAAAAdAA8AAAAAAAEAAAAdABAAAAAAAAEAAAAeAA4AAAAAAAEAAAAeAA8AAAAAAAEAAAAeABAAAAAAAAEAAAAfAA4AAAAAAAEAAAAfAA8AAAAAAAEAAAAfABAAAAAAAAEAAAAgAA4AAAAAAAEAAAAgAA8AAAAAAAEAAAAgABAAAAAAAAEAAAAhAA4AAAAAAAEAAAAhAA8AAAAAAAEAAAAhABAAAAAAAAEAAAAiAA4AAAAAAAEAAAAiAA8AAAAAAAEAAAAiABAAAAAAAAEAAAAjAA4AAAAAAAEAAAAjAA8AAAAAAAEAAAAjABAAAAAAAAEAAAAkAA4AAAAAAAEAAAAkAA8AAAAAAAEAAAAkABAAAAAAAAEAAAAlAA4AAAAAAAEAAAAlAA8AAAAAAAEAAAAlABAAAAAAAAEAAAA=")
 tile_set = SubResource("TileSet_272bh")
 
-[node name="Player" type="CharacterBody2D" parent="."]
-position = Vector2(52.88, 59.565)
-script = ExtResource("2_1bvp3")
+[node name="Player" parent="." instance=ExtResource("2_0xm2m")]
+position = Vector2(232, 136)
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Player"]
-position = Vector2(0, 1.81)
-shape = SubResource("CapsuleShape2D_5vw27")
+[node name="ParallaxBackground" type="ParallaxBackground" parent="."]
 
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Player"]
-sprite_frames = SubResource("SpriteFrames_qsp4k")
-autoplay = "default"
+[node name="Sky" type="ParallaxLayer" parent="ParallaxBackground"]
+motion_scale = Vector2(0, 0)
+
+[node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/Sky"]
+scale = Vector2(0.25, 0.25)
+texture = ExtResource("3_1bvp3")
+centered = false
+
+[node name="Buildings" type="ParallaxLayer" parent="ParallaxBackground"]
+motion_mirroring = Vector2(480, 0)
+
+[node name="Sprite2D2" type="Sprite2D" parent="ParallaxBackground/Buildings"]
+scale = Vector2(0.25, 0.25)
+texture = ExtResource("4_lquwl")
+centered = false
