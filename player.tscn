@@ -169,7 +169,9 @@ shape = SubResource("CapsuleShape2D_5vw27")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_qsp4k")
+animation = &"run"
 autoplay = "default"
 
 [node name="Camera2D" type="Camera2D" parent="."]
+offset = Vector2(0, -30)
 position_smoothing_enabled = true
