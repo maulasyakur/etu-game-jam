@@ -1,0 +1,10 @@
+[gd_scene load_steps=2 format=3 uid="uid://btqu7aiio3oxw"]
+
+[ext_resource type="Script" uid="uid://dcbsg0kl0yeo" path="res://gun.gd" id="1_dk5gl"]
+
+[node name="Gun" type="Node2D"]
+script = ExtResource("1_dk5gl")
+
+[node name="Muzzle" type="Node2D" parent="."]
+position = Vector2(23, -5)
+scale = Vector2(11.6612, 1)

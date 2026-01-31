@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cceb54f52v26x"
-path="res://.godot/imported/bobby.PNG-5086769c847e7e7db731e1a1238d2ad9.ctex"
+uid="uid://cmhdl1vp8mi2e"
+path="res://.godot/imported/bobby_sprite.png-2bd816f15d6293137959c383a028d2de.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://brackeys_platformer_assets/sprites/bobby.PNG"
-dest_files=["res://.godot/imported/bobby.PNG-5086769c847e7e7db731e1a1238d2ad9.ctex"]
+source_file="res://brackeys_platformer_assets/sprites/bobby_sprite.png"
+dest_files=["res://.godot/imported/bobby_sprite.png-2bd816f15d6293137959c383a028d2de.ctex"]
 
 [params]
 
