@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" uid="uid://bw42qq7dihb1v" path="res://player.gd" id="1_i3pqv"]
 [ext_resource type="Texture2D" uid="uid://c4srfyc4ylywf" path="res://brackeys_platformer_assets/sprites/knight.png" id="2_hqtel"]
-[ext_resource type="Script" uid="uid://dcbsg0kl0yeo" path="res://gun.gd" id="3_hqtel"]
+[ext_resource type="Script" uid="uid://dcbsg0kl0yeo" path="res://ggun.gd" id="3_hqtel"]
 [ext_resource type="Texture2D" uid="uid://ddtejdef157po" path="res://Guns_V1.01 - Commission - Copy/01 - Individual sprites/Guns/Revolver - Colt 45 [64x32].png" id="4_sweqy"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_5vw27"]
@@ -180,6 +180,6 @@ position_smoothing_enabled = true
 script = ExtResource("3_hqtel")
 
 [node name="Sprite2D" type="Sprite2D" parent="Node2D"]
-position = Vector2(25, 0)
-scale = Vector2(0.480791, 0.480791)
+position = Vector2(17, 4)
+scale = Vector2(0.317239, 0.319833)
 texture = ExtResource("4_sweqy")
