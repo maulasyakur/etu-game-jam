@@ -1,0 +1,34 @@
+[remap]
+
+importer="texture"
+type="CompressedTexture2D"
+uid="uid://0ldeo4k7ona"
+path="res://.godot/imported/UI_TravelBook_Point02a_1.png-fb35f48b3b5425e88aac9f413d0ca797.ctex"
+metadata={
+"vram_texture": false
+}
+
+[deps]
+
+source_file="res://Complete_UI_Book_Styles_Pack_Free_v1.0/01_TravelBookLite/Sprites Animated/UI_TravelBook_Point02a_1.png"
+dest_files=["res://.godot/imported/UI_TravelBook_Point02a_1.png-fb35f48b3b5425e88aac9f413d0ca797.ctex"]
+
+[params]
+
+compress/mode=0
+compress/high_quality=false
+compress/lossy_quality=0.7
+compress/hdr_compression=1
+compress/normal_map=0
+compress/channel_pack=0
+mipmaps/generate=false
+mipmaps/limit=-1
+roughness/mode=0
+roughness/src_normal=""
+process/fix_alpha_border=true
+process/premult_alpha=false
+process/normal_map_invert_y=false
+process/hdr_as_srgb=false
+process/hdr_clamp_exposure=false
+process/size_limit=0
+detect_3d/compress_to=1

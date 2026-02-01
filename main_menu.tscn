@@ -1,0 +1,131 @@
+[gd_scene load_steps=10 format=3 uid="uid://buj4qjvxa8xss"]
+
+[ext_resource type="FontFile" uid="uid://j40kqe48hi7w" path="res://Minecraft.ttf" id="1_06t4h"]
+[ext_resource type="Texture2D" uid="uid://dguj2mavty32x" path="res://free-swamp-game-tileset-pixel-art/2 Background/Background.png" id="1_fu7sn"]
+[ext_resource type="Script" uid="uid://dkoim0umgy8n4" path="res://main_menu.gd" id="1_jix8l"]
+[ext_resource type="AudioStream" uid="uid://d1jh1ia67xccc" path="res://Quaint Town.wav" id="2_glbon"]
+[ext_resource type="Texture2D" uid="uid://dmb7b46qoskk5" path="res://Complete_UI_Book_Styles_Pack_Free_v1.0/01_TravelBookLite/Sprites/UI_TravelBook_Frame01a.png" id="2_jix8l"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_glbon"]
+texture = ExtResource("1_fu7sn")
+modulate_color = Color(0.394987, 0.394987, 0.394987, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_glbon"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_nlkkf"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_qe12f"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+
+[node name="Control" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_jix8l")
+
+[node name="QuaintTown" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("2_glbon")
+volume_db = -39.234
+autoplay = true
+mix_target = 1
+
+[node name="Panel" type="Panel" parent="."]
+layout_mode = 0
+offset_right = 360.0
+offset_bottom = 176.0
+theme_override_styles/panel = SubResource("StyleBoxTexture_glbon")
+
+[node name="Startgame" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -36.56
+offset_top = -13.0
+offset_right = 36.56
+offset_bottom = 13.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_jix8l")
+
+[node name="Button" type="Button" parent="Startgame"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -35.56
+offset_top = -10.0
+offset_right = 36.44
+offset_bottom = 9.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("1_06t4h")
+theme_override_font_sizes/font_size = 10
+theme_override_styles/hover = SubResource("StyleBoxFlat_glbon")
+theme_override_styles/normal = SubResource("StyleBoxFlat_nlkkf")
+text = "Start Game"
+
+[node name="Quitgame" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -36.0
+offset_top = -68.0
+offset_right = 37.12
+offset_bottom = -42.0
+grow_horizontal = 2
+grow_vertical = 0
+texture = ExtResource("2_jix8l")
+
+[node name="Button" type="Button" parent="Quitgame"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -36.56
+offset_top = -13.0
+offset_right = 35.44
+offset_bottom = 11.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("1_06t4h")
+theme_override_font_sizes/font_size = 10
+theme_override_styles/hover = SubResource("StyleBoxFlat_glbon")
+theme_override_styles/normal = SubResource("StyleBoxFlat_qe12f")
+text = "Quit"
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.5
+anchor_top = 0.197
+anchor_right = 0.5
+anchor_bottom = 0.197
+offset_left = -52.0
+offset_top = -11.46
+offset_right = 52.0
+offset_bottom = 12.54
+grow_horizontal = 2
+theme_override_constants/shadow_offset_x = 4
+theme_override_fonts/font = ExtResource("1_06t4h")
+theme_override_font_sizes/font_size = 21
+text = "NUCLEAR"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[connection signal="pressed" from="Startgame/Button" to="." method="_start_pressed"]
+[connection signal="pressed" from="Quitgame/Button" to="." method="_on_quit"]
