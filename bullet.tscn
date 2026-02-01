@@ -1,11 +1,22 @@
-[gd_scene load_steps=3 format=3 uid="uid://ygpbewrhwb1x"]
+[gd_scene load_steps=4 format=3 uid="uid://ygpbewrhwb1x"]
 
 [ext_resource type="Texture2D" uid="uid://4jmvjt24bgim" path="res://Guns_V1.01 - Commission - Copy/01 - Individual sprites/Bullets & Ammo/Revolver - Colt 45/Bullet.png" id="1_v7oki"]
 [ext_resource type="Script" uid="uid://c4c12yytun6p8" path="res://bullet.gd" id="1_v8qja"]
 
-[node name="Bullet" type="Node2D"]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_v8qja"]
+size = Vector2(7, 6)
+
+[node name="Bullet" type="Area2D"]
+collision_layer = 4
+collision_mask = 10
 script = ExtResource("1_v8qja")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 scale = Vector2(3.56139, 3.18123)
 texture = ExtResource("1_v7oki")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." groups=["player"]]
+position = Vector2(3.5, 0)
+shape = SubResource("RectangleShape2D_v8qja")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

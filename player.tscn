@@ -152,9 +152,10 @@ animations = [{
 }]
 
 [node name="Player" type="CharacterBody2D"]
+collision_mask = 10
 script = ExtResource("1_i3pqv")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." groups=["player"]]
 position = Vector2(0, 3.915)
 shape = SubResource("CapsuleShape2D_5vw27")
 
