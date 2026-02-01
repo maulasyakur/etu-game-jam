@@ -1,6 +1,8 @@
 extends CharacterBody2D
 
 @onready var animated_sprite_2d: AnimatedSprite2D = $AnimatedSprite2D
+@onready var health_component: HealthComponent = $HealthComponent
+@onready var control_path = preload("res://control.tscn")
 
 const SPEED = 100.0
 const JUMP_VELOCITY = -200.0
@@ -9,6 +11,7 @@ var is_running: bool = false
 var was_on_floor: bool = true
 var current_animation: String = ""
 var wearing_mask := false
+var is_taking_damage := false
 
 func _physics_process(delta: float) -> void:
 	# Handle gravity (except when on ladder)
@@ -47,6 +50,8 @@ func _physics_process(delta: float) -> void:
 		else:
 			velocity.y = move_toward(velocity.y, 0, SPEED)  # Fixed: velocity.y not velocity.x
 	
+	if is_taking_damage:
+		health_component.take_damage(5)
 	# Update animation based on state
 	update_animation()
 	
@@ -85,12 +90,28 @@ func _on_area_ladder_body_entered(body: Node2D) -> void:
 func _on_area_ladder_body_exited(body: Node2D) -> void:
 	print("player exited stair area")
 	on_ladder = false
+	
 
-func _on_area_plant_body_entered(body: Node2D) -> void:
-	print(body)
-
-func _on_area_plant_body_exited(body: Node2D) -> void:
-	print(body)
 	
 func wear_mask():
 	wearing_mask = true
+
+
+func _on_area_2d_area_entered(area: Area2D) -> void:
+	print("area2d entered")
+	is_taking_damage = true
+
+func _on_area_2d_area_exited(area: Area2D) -> void:
+	print("area2d entered")
+	is_taking_damage = false
+
+
+func _on_health_component_health_depleted() -> void:
+	var game_over_instance = control_path.instantiate()
+	
+	# Create a canvas layer and add the control to it
+	var canvas_layer = CanvasLayer.new()
+	canvas_layer.layer = 100  # High number to ensure it's on top
+	canvas_layer.add_child(game_over_instance)
+	
+	get_tree().root.add_child(canvas_layer)

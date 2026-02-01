@@ -1,4 +1,4 @@
-[gd_scene load_steps=41 format=3 uid="uid://64301svl7id2"]
+[gd_scene load_steps=42 format=3 uid="uid://64301svl7id2"]
 
 [ext_resource type="Script" uid="uid://gfmuo47kwt3v" path="res://player.gd" id="1_i3pqv"]
 [ext_resource type="Texture2D" uid="uid://50p40lgmm3bh" path="res://walking_mask_covid.PNG" id="2_dw050"]
@@ -8,6 +8,7 @@
 [ext_resource type="PackedScene" uid="uid://btqu7aiio3oxw" path="res://gun.tscn" id="4_hqtel"]
 [ext_resource type="Texture2D" uid="uid://cfxfxj13gsavj" path="res://brackeys_platformer_assets/sprites/bobby_jump.png" id="4_n7ghd"]
 [ext_resource type="Texture2D" uid="uid://dh0djks8mpu53" path="res://brackeys_platformer_assets/sprites/bobby_manjat.png" id="5_urp6f"]
+[ext_resource type="Script" uid="uid://d3mswj0j785r" path="res://health_component.gd" id="9_b26j0"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_5vw27"]
 radius = 6.0
@@ -253,7 +254,7 @@ animations = [{
 radius = 8.0
 
 [node name="Player" type="CharacterBody2D"]
-collision_mask = 10
+collision_mask = 8
 script = ExtResource("1_i3pqv")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." groups=["player"]]
@@ -279,12 +280,18 @@ wait_time = 0.5
 one_shot = true
 
 [node name="Area2D" type="Area2D" parent="."]
-collision_layer = 0
-collision_mask = 16
+collision_mask = 2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
 position = Vector2(0, 2)
 shape = SubResource("CapsuleShape2D_iruf7")
 
+[node name="HealthComponent" type="Node" parent="."]
+script = ExtResource("9_b26j0")
+metadata/_custom_type_script = "uid://d3mswj0j785r"
+
+[connection signal="area_entered" from="Area2D" to="." method="_on_area_2d_area_entered"]
+[connection signal="area_exited" from="Area2D" to="." method="_on_area_2d_area_exited"]
 [connection signal="body_entered" from="Area2D" to="." method="_on_area_ladder_body_entered"]
 [connection signal="body_exited" from="Area2D" to="." method="_on_area_ladder_body_exited"]
+[connection signal="health_depleted" from="HealthComponent" to="." method="_on_health_component_health_depleted"]

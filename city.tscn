@@ -1,16 +1,16 @@
-[gd_scene load_steps=50 format=4 uid="uid://db0v8gvujmlnx"]
+[gd_scene load_steps=51 format=4 uid="uid://b8bpy50nrc8mm"]
 
-[ext_resource type="Script" uid="uid://dbk8qi03bg8ws" path="res://level_2.gd" id="1_fnscv"]
+[ext_resource type="Script" path="res://level_2.gd" id="1_fnscv"]
 [ext_resource type="Texture2D" uid="uid://cbgc4p0fgpsm" path="res://brackeys_platformer_assets/sprites/world_tileset.png" id="2_flcn8"]
 [ext_resource type="Texture2D" uid="uid://be4yp688oujin" path="res://Dungeon Tile Set.png" id="3_eodxk"]
 [ext_resource type="Texture2D" uid="uid://i8ac4crphgc5" path="res://GandalfHardcore FREE Platformer Assets/House 1.png" id="4_dwsaf"]
 [ext_resource type="Texture2D" uid="uid://btdnwen38a804" path="res://jungle tileset.png" id="5_ogu4x"]
 [ext_resource type="Texture2D" uid="uid://rg5hnba886wy" path="res://Kings and Pigs/Sprites/14-TileSets/Terrain (32x32).png" id="6_os3y0"]
-[ext_resource type="Script" uid="uid://0d801p5ir140" path="res://limit_left.gd" id="7_icfaj"]
+[ext_resource type="Script" path="res://limit_left.gd" id="7_icfaj"]
 [ext_resource type="Texture2D" uid="uid://bukj7r84c8eh8" path="res://city_background.png" id="8_w8nay"]
 [ext_resource type="Texture2D" uid="uid://ov522tqlvfud" path="res://City4/Bright/houses.png" id="9_w8nay"]
 [ext_resource type="PackedScene" uid="uid://64301svl7id2" path="res://player.tscn" id="12_f1ffw"]
-[ext_resource type="Script" uid="uid://c7iij1x38grrn" path="res://limit_right_2.gd" id="12_w8nay"]
+[ext_resource type="Script" path="res://limit_right_2.gd" id="12_w8nay"]
 [ext_resource type="AudioStream" uid="uid://c6iirce13e3n" path="res://Mining at Dusk.wav" id="13_rvhhm"]
 [ext_resource type="Script" uid="uid://b2m8wqgdh0j2d" path="res://chat.gd" id="15_mca7m"]
 [ext_resource type="Texture2D" uid="uid://cgyneqwki4fqe" path="res://Complete_UI_Book_Styles_Pack_Free_v1.0/01_TravelBookLite/Sprites/UI_TravelBook_Popup01a.png" id="16_8usap"]
@@ -28,7 +28,8 @@
 [ext_resource type="Texture2D" uid="uid://7de6h17n04jf" path="res://Complete_UI_Book_Styles_Pack_Free_v1.0/01_TravelBookLite/Sprites/UI_TravelBook_IconGear01a.png" id="29_181i1"]
 [ext_resource type="Texture2D" uid="uid://b8tml55ncck00" path="res://Complete_UI_Book_Styles_Pack_Free_v1.0/01_TravelBookLite/Sprites/UI_TravelBook_IconHome01a.png" id="30_cuf4a"]
 [ext_resource type="Texture2D" uid="uid://dn04fboxw2x2k" path="res://music-logo.png" id="31_cl63n"]
-[ext_resource type="Script" uid="uid://bi1882dw8seur" path="res://menu_button.gd" id="32_rty1x"]
+[ext_resource type="Script" path="res://menu_button.gd" id="32_rty1x"]
+[ext_resource type="PackedScene" uid="uid://cyiutomrqf83n" path="res://enemy_spawner.tscn" id="32_w8nay"]
 [ext_resource type="FontFile" uid="uid://2avntto0a01j" path="res://brackeys_platformer_assets/fonts/PixelOperator8-Bold.ttf" id="33_63ewr"]
 [ext_resource type="Texture2D" uid="uid://bafvy28qhy43r" path="res://Complete_UI_Book_Styles_Pack_Free_v1.0/01_TravelBookLite/Sprites/UI_TravelBook_FrameSelect01b.png" id="34_5a1ef"]
 
@@ -1736,6 +1737,12 @@ collision_layer = 25
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
 position = Vector2(209, 165)
 shape = SubResource("RectangleShape2D_qrg1y")
+
+[node name="EnemySpawner" parent="." instance=ExtResource("32_w8nay")]
+position = Vector2(-40, 112)
+
+[node name="EnemySpawner2" parent="." instance=ExtResource("32_w8nay")]
+position = Vector2(40, 112)
 
 [connection signal="body_entered" from="Limit Right2/Area2D" to="Limit Right2" method="_on_area_2d_body_entered"]
 [connection signal="pressed" from="CanvasLayer/Chat/Dialogue-1-radio/Next" to="CanvasLayer/Chat" method="_to_dialogue2"]

@@ -1,14 +1,14 @@
-[gd_scene load_steps=74 format=4 uid="uid://52sujogfdetm"]
+[gd_scene load_steps=75 format=4 uid="uid://bwxc11jm3xryg"]
 
 [ext_resource type="Texture2D" uid="uid://cbgc4p0fgpsm" path="res://brackeys_platformer_assets/sprites/world_tileset.png" id="1_lwvnx"]
-[ext_resource type="Script" uid="uid://dbk8qi03bg8ws" path="res://level_2.gd" id="1_sl2u6"]
+[ext_resource type="Script" path="res://level_2.gd" id="1_sl2u6"]
 [ext_resource type="Texture2D" uid="uid://be4yp688oujin" path="res://Dungeon Tile Set.png" id="2_4ou0f"]
 [ext_resource type="Texture2D" uid="uid://i8ac4crphgc5" path="res://GandalfHardcore FREE Platformer Assets/House 1.png" id="3_4k5bj"]
 [ext_resource type="Texture2D" uid="uid://btdnwen38a804" path="res://jungle tileset.png" id="4_hp87d"]
 [ext_resource type="Texture2D" uid="uid://rg5hnba886wy" path="res://Kings and Pigs/Sprites/14-TileSets/Terrain (32x32).png" id="5_gxpff"]
 [ext_resource type="Texture2D" uid="uid://dguj2mavty32x" path="res://free-swamp-game-tileset-pixel-art/2 Background/Background.png" id="6_2x2vu"]
 [ext_resource type="Texture2D" uid="uid://ctnwhhq68olr" path="res://Pale/ground&houses2.png" id="7_f8ci1"]
-[ext_resource type="Script" uid="uid://0d801p5ir140" path="res://limit_left.gd" id="7_nv8dg"]
+[ext_resource type="Script" path="res://limit_left.gd" id="7_nv8dg"]
 [ext_resource type="Texture2D" uid="uid://ceq02yuhw75a2" path="res://free-swamp-game-tileset-pixel-art/3 Objects/Boxes/4.png" id="8_iakae"]
 [ext_resource type="Texture2D" uid="uid://bksg152xvtgkh" path="res://GandalfHardcore FREE Platformer Assets/Decor.png" id="9_7mylh"]
 [ext_resource type="PackedScene" uid="uid://64301svl7id2" path="res://player.tscn" id="10_3k4dh"]
@@ -31,7 +31,7 @@
 [ext_resource type="FontFile" uid="uid://qadiu66m1218" path="res://brackeys_platformer_assets/fonts/PixelOperator8.ttf" id="24_cfvhu"]
 [ext_resource type="Texture2D" uid="uid://b8tml55ncck00" path="res://Complete_UI_Book_Styles_Pack_Free_v1.0/01_TravelBookLite/Sprites/UI_TravelBook_IconHome01a.png" id="24_nv8dg"]
 [ext_resource type="Texture2D" uid="uid://dn04fboxw2x2k" path="res://music-logo.png" id="25_wooj1"]
-[ext_resource type="Script" uid="uid://bi1882dw8seur" path="res://menu_button.gd" id="26_1i48b"]
+[ext_resource type="Script" path="res://menu_button.gd" id="26_1i48b"]
 [ext_resource type="FontFile" uid="uid://2avntto0a01j" path="res://brackeys_platformer_assets/fonts/PixelOperator8-Bold.ttf" id="30_cfvhu"]
 [ext_resource type="Script" uid="uid://d1yp5b0jr1da0" path="res://inventory.gd" id="33_00gqm"]
 [ext_resource type="Texture2D" uid="uid://bvu81m2ma84ry" path="res://Complete_UI_Book_Styles_Pack_Free_v1.0/01_TravelBookLite/Sprites/UI_TravelBook_BookCover01a.png" id="34_ny7tr"]
@@ -39,8 +39,9 @@
 [ext_resource type="Texture2D" uid="uid://dj4m2h0hb5isf" path="res://mailbox.PNG" id="35_wooj1"]
 [ext_resource type="Texture2D" uid="uid://d1ouxcajw1gtf" path="res://Complete_UI_Book_Styles_Pack_Free_v1.0/01_TravelBookLite/Sprites/UI_TravelBook_IconCross01a.png" id="36_ttoml"]
 [ext_resource type="Texture2D" uid="uid://bt47s72nt7mq" path="res://Complete_UI_Book_Styles_Pack_Free_v1.0/01_TravelBookLite/Sprites/UI_TravelBook_IconCoin01a.png" id="37_ocb40"]
-[ext_resource type="Script" uid="uid://b0elhrpat4o3s" path="res://plant.gd" id="40_ttoml"]
+[ext_resource type="Script" path="res://plant.gd" id="40_ttoml"]
 [ext_resource type="Texture2D" uid="uid://cocvqgqhua2hw" path="res://grape bush.png" id="41_ocb40"]
+[ext_resource type="PackedScene" uid="uid://cyiutomrqf83n" path="res://enemy_spawner.tscn" id="42_ocb40"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_7mycd"]
 texture = ExtResource("1_lwvnx")
@@ -2343,7 +2344,7 @@ corner_radius_top_right = 2
 corner_radius_bottom_right = 2
 corner_radius_bottom_left = 2
 
-[node name="Main" type="Node2D"]
+[node name="Main2" type="Node2D"]
 script = ExtResource("1_sl2u6")
 
 [node name="TileMapLayer" type="TileMapLayer" parent="."]
@@ -2991,6 +2992,9 @@ theme_override_fonts/font = ExtResource("14_545ku")
 theme_override_font_sizes/font_size = 5
 theme_override_styles/normal = SubResource("StyleBoxFlat_1jrro")
 text = "Take grape"
+
+[node name="EnemySpawner" parent="." instance=ExtResource("42_ocb40")]
+position = Vector2(-176, 184)
 
 [connection signal="body_entered" from="Limit Left/Area2D" to="Limit Left" method="_on_area_2d_body_entered"]
 [connection signal="timeout" from="CanvasLayer/stats/Hungerbar/bleed_timer" to="CanvasLayer/stats" method="_on_bleed_timer_timeout"]

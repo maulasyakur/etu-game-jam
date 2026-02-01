@@ -7,7 +7,7 @@ extends Node2D
 func _ready() -> void:
 	var enemy_instance = enemy_path.instantiate()
 	add_child(enemy_instance)
-	var random_number = randf() * 5
+	var random_number = randi_range(5,20)
 	print(random_number)
 	timer.start(random_number)
 
