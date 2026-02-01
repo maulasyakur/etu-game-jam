@@ -19,7 +19,6 @@
 [ext_resource type="Texture2D" uid="uid://c003vjf7h84kc" path="res://Complete_UI_Book_Styles_Pack_Free_v1.0/01_TravelBookLite/Sprites/UI_TravelBook_IconArrow01a.png" id="19_kbpgf"]
 [ext_resource type="Texture2D" uid="uid://bbjman581jyh3" path="res://ruby-profile.PNG" id="20_na7ed"]
 [ext_resource type="AudioStream" uid="uid://dld77c1vxfdw6" path="res://mixkit-mouse-click-close-1113.wav" id="21_8o67u"]
-[ext_resource type="Script" uid="uid://caipu1ox1sok4" path="res://healthbar.gd" id="22_vs3hv"]
 [ext_resource type="Texture2D" uid="uid://dmb7b46qoskk5" path="res://Complete_UI_Book_Styles_Pack_Free_v1.0/01_TravelBookLite/Sprites/UI_TravelBook_Frame01a.png" id="23_uqgct"]
 [ext_resource type="Texture2D" uid="uid://7vg3re87jqq0" path="res://Complete_UI_Book_Styles_Pack_Free_v1.0/01_TravelBookLite/Sprites/UI_TravelBook_IconHeart01a.png" id="24_jp0it"]
 [ext_resource type="Texture2D" uid="uid://bdb6km8ni4t06" path="res://Complete_UI_Book_Styles_Pack_Free_v1.0/01_TravelBookLite/Sprites/UI_TravelBook_IconEnergy01a.png" id="25_1pnll"]
@@ -1199,6 +1198,8 @@ bg_color = Color(0.6, 0.6, 0.6, 0)
 draw_center = false
 corner_detail = 1
 
+[sub_resource type="GDScript" id="GDScript_ktasi"]
+
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_c5gc3"]
 bg_color = Color(0.431373, 0.12549, 0.129412, 0)
 border_color = Color(0.297418, 0.07532, 0.0782808, 1)
@@ -1523,7 +1524,7 @@ offset_left = 314.0
 offset_top = 5.0
 offset_right = 404.0
 offset_bottom = 19.0
-script = ExtResource("22_vs3hv")
+script = SubResource("GDScript_ktasi")
 
 [node name="healthback" type="TextureRect" parent="CanvasLayer/Healthbar"]
 layout_mode = 1

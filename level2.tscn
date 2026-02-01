@@ -1,4 +1,4 @@
-[gd_scene load_steps=59 format=4 uid="uid://52sujogfdetm"]
+[gd_scene load_steps=61 format=4 uid="uid://52sujogfdetm"]
 
 [ext_resource type="Texture2D" uid="uid://cbgc4p0fgpsm" path="res://brackeys_platformer_assets/sprites/world_tileset.png" id="1_lwvnx"]
 [ext_resource type="Script" uid="uid://dbk8qi03bg8ws" path="res://level_2.gd" id="1_sl2u6"]
@@ -21,7 +21,6 @@
 [ext_resource type="Texture2D" uid="uid://c003vjf7h84kc" path="res://Complete_UI_Book_Styles_Pack_Free_v1.0/01_TravelBookLite/Sprites/UI_TravelBook_IconArrow01a.png" id="16_sl2u6"]
 [ext_resource type="Texture2D" uid="uid://bbjman581jyh3" path="res://ruby-profile.PNG" id="18_y2jff"]
 [ext_resource type="AudioStream" uid="uid://dld77c1vxfdw6" path="res://mixkit-mouse-click-close-1113.wav" id="19_545ku"]
-[ext_resource type="Script" uid="uid://caipu1ox1sok4" path="res://healthbar.gd" id="19_lh3ue"]
 [ext_resource type="Texture2D" uid="uid://dmb7b46qoskk5" path="res://Complete_UI_Book_Styles_Pack_Free_v1.0/01_TravelBookLite/Sprites/UI_TravelBook_Frame01a.png" id="20_cfvhu"]
 [ext_resource type="Texture2D" uid="uid://7vg3re87jqq0" path="res://Complete_UI_Book_Styles_Pack_Free_v1.0/01_TravelBookLite/Sprites/UI_TravelBook_IconHeart01a.png" id="21_sl2u6"]
 [ext_resource type="Texture2D" uid="uid://bdb6km8ni4t06" path="res://Complete_UI_Book_Styles_Pack_Free_v1.0/01_TravelBookLite/Sprites/UI_TravelBook_IconEnergy01a.png" id="22_fug78"]
@@ -34,6 +33,7 @@
 [ext_resource type="Script" uid="uid://bi1882dw8seur" path="res://menu_button.gd" id="26_1i48b"]
 [ext_resource type="FontFile" uid="uid://2avntto0a01j" path="res://brackeys_platformer_assets/fonts/PixelOperator8-Bold.ttf" id="30_cfvhu"]
 [ext_resource type="Texture2D" uid="uid://bafvy28qhy43r" path="res://Complete_UI_Book_Styles_Pack_Free_v1.0/01_TravelBookLite/Sprites/UI_TravelBook_FrameSelect01b.png" id="32_fug78"]
+[ext_resource type="Texture2D" uid="uid://dj4m2h0hb5isf" path="res://mailbox.PNG" id="35_wooj1"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_7mycd"]
 texture = ExtResource("1_lwvnx")
@@ -2282,6 +2282,8 @@ bg_color = Color(0.6, 0.6, 0.6, 0)
 draw_center = false
 corner_detail = 1
 
+[sub_resource type="GDScript" id="GDScript_ktasi"]
+
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_c5gc3"]
 bg_color = Color(0.431373, 0.12549, 0.129412, 0)
 border_color = Color(0.297418, 0.07532, 0.0782808, 1)
@@ -2300,6 +2302,9 @@ corner_detail = 1
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_cfvhu"]
 bg_color = Color(0.909804, 0.815686, 0.72549, 1)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_1i48b"]
+size = Vector2(15, 15)
 
 [node name="Main" type="Node2D"]
 script = ExtResource("1_sl2u6")
@@ -2661,7 +2666,7 @@ offset_left = 314.0
 offset_top = 5.0
 offset_right = 404.0
 offset_bottom = 19.0
-script = ExtResource("19_lh3ue")
+script = SubResource("GDScript_ktasi")
 
 [node name="healthback" type="TextureRect" parent="CanvasLayer/Healthbar"]
 layout_mode = 1
@@ -2865,6 +2870,20 @@ offset_right = 36.5
 offset_bottom = 6.0
 grow_horizontal = 2
 grow_vertical = 2
+
+[node name="Mailbox" type="Node2D" parent="."]
+position = Vector2(359, 211)
+
+[node name="Area2D" type="Area2D" parent="Mailbox"]
+
+[node name="Sprite2D" type="Sprite2D" parent="Mailbox/Area2D"]
+position = Vector2(-2.84613, 1.00002)
+scale = Vector2(0.615385, 0.615385)
+texture = ExtResource("35_wooj1")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Mailbox/Area2D"]
+position = Vector2(-3.19214, 1)
+shape = SubResource("RectangleShape2D_1i48b")
 
 [connection signal="body_entered" from="Limit Left/Area2D" to="Limit Left" method="_on_area_2d_body_entered"]
 [connection signal="pressed" from="CanvasLayer/Chat/Dialogue-1-radio/Next" to="CanvasLayer/Chat" method="_to_dialogue2"]
