@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cski2lenqkr47"
-path="res://.godot/imported/bobby_nembak(1).png-08b7fea9aeacbd8932ef5e366bbc7531.ctex"
+uid="uid://cfxfxj13gsavj"
+path="res://.godot/imported/bobby_jump.png-362985399170b3c46fde9db066227bf0.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://brackeys_platformer_assets/sprites/bobby_nembak(1).png"
-dest_files=["res://.godot/imported/bobby_nembak(1).png-08b7fea9aeacbd8932ef5e366bbc7531.ctex"]
+source_file="res://brackeys_platformer_assets/sprites/bobby_jump.png"
+dest_files=["res://.godot/imported/bobby_jump.png-362985399170b3c46fde9db066227bf0.ctex"]
 
 [params]
 
