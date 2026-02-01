@@ -16,3 +16,7 @@ func Physics_Update(_delta: float) -> void:
 	# Move toward player
 	character_body.velocity = direction * speed
 	character_body.move_and_slide()
+
+
+func _on_health_component_health_depleted() -> void:
+	Transitioned.emit(self, "die")
