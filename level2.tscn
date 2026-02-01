@@ -1,4 +1,4 @@
-[gd_scene load_steps=61 format=4 uid="uid://52sujogfdetm"]
+[gd_scene load_steps=69 format=4 uid="uid://52sujogfdetm"]
 
 [ext_resource type="Texture2D" uid="uid://cbgc4p0fgpsm" path="res://brackeys_platformer_assets/sprites/world_tileset.png" id="1_lwvnx"]
 [ext_resource type="Script" uid="uid://dbk8qi03bg8ws" path="res://level_2.gd" id="1_sl2u6"]
@@ -32,8 +32,12 @@
 [ext_resource type="Texture2D" uid="uid://dn04fboxw2x2k" path="res://music-logo.png" id="25_wooj1"]
 [ext_resource type="Script" uid="uid://bi1882dw8seur" path="res://menu_button.gd" id="26_1i48b"]
 [ext_resource type="FontFile" uid="uid://2avntto0a01j" path="res://brackeys_platformer_assets/fonts/PixelOperator8-Bold.ttf" id="30_cfvhu"]
-[ext_resource type="Texture2D" uid="uid://bafvy28qhy43r" path="res://Complete_UI_Book_Styles_Pack_Free_v1.0/01_TravelBookLite/Sprites/UI_TravelBook_FrameSelect01b.png" id="32_fug78"]
+[ext_resource type="Script" uid="uid://d1yp5b0jr1da0" path="res://inventory.gd" id="33_00gqm"]
+[ext_resource type="Texture2D" uid="uid://bvu81m2ma84ry" path="res://Complete_UI_Book_Styles_Pack_Free_v1.0/01_TravelBookLite/Sprites/UI_TravelBook_BookCover01a.png" id="34_ny7tr"]
+[ext_resource type="Texture2D" uid="uid://don1m8p2ogc0n" path="res://apple.png" id="35_lphq7"]
 [ext_resource type="Texture2D" uid="uid://dj4m2h0hb5isf" path="res://mailbox.PNG" id="35_wooj1"]
+[ext_resource type="Texture2D" uid="uid://d1ouxcajw1gtf" path="res://Complete_UI_Book_Styles_Pack_Free_v1.0/01_TravelBookLite/Sprites/UI_TravelBook_IconCross01a.png" id="36_ttoml"]
+[ext_resource type="Texture2D" uid="uid://bt47s72nt7mq" path="res://Complete_UI_Book_Styles_Pack_Free_v1.0/01_TravelBookLite/Sprites/UI_TravelBook_IconCoin01a.png" id="37_ocb40"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_7mycd"]
 texture = ExtResource("1_lwvnx")
@@ -2303,6 +2307,20 @@ corner_detail = 1
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_cfvhu"]
 bg_color = Color(0.909804, 0.815686, 0.72549, 1)
 
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_86mrq"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+corner_detail = 1
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_wrkgn"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+corner_detail = 1
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_fbuj2"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_dak4d"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_1i48b"]
 size = Vector2(15, 15)
 
@@ -2830,46 +2848,85 @@ theme_override_font_sizes/font_size = 11
 text = "Day 2"
 horizontal_alignment = 2
 
-[node name="notiffication-bar" type="Control" parent="CanvasLayer"]
-visible = false
+[node name="Inventory" type="Control" parent="CanvasLayer"]
 layout_mode = 3
-anchor_left = 0.321
-anchor_top = 0.2
-anchor_right = 0.321
-anchor_bottom = 0.2
-offset_left = -54.56
-offset_top = -11.0
-offset_right = 54.44
-offset_bottom = 11.0
+anchors_preset = 0
+offset_left = 50.0
+offset_right = 465.0
+offset_bottom = 180.0
+script = ExtResource("33_00gqm")
 
-[node name="TextureRect" type="TextureRect" parent="CanvasLayer/notiffication-bar"]
+[node name="inventory-container" type="TextureRect" parent="CanvasLayer/Inventory"]
+visible = false
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -36.0
-offset_top = -5.5
-offset_right = 36.0
-offset_bottom = 5.5
+offset_left = -149.5
+offset_top = -82.0
+offset_right = 82.4999
+offset_bottom = 51.0
 grow_horizontal = 2
 grow_vertical = 2
-texture = ExtResource("32_fug78")
+texture = ExtResource("34_ny7tr")
+expand_mode = 2
+stretch_mode = 2
 
-[node name="notiffication-text" type="TextEdit" parent="CanvasLayer/notiffication-bar"]
+[node name="ItemList" type="ItemList" parent="CanvasLayer/Inventory/inventory-container"]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -36.5
-offset_top = -6.0
-offset_right = 36.5
-offset_bottom = 6.0
+offset_left = -107.0
+offset_top = -58.5
+offset_right = 100.0
+offset_bottom = 85.5
 grow_horizontal = 2
 grow_vertical = 2
+item_count = 2
+item_0/text = "Apple"
+item_0/icon = ExtResource("35_lphq7")
+item_1/text = "Radio"
+item_1/icon = ExtResource("15_cfvhu")
+
+[node name="close-btn" type="Button" parent="CanvasLayer/Inventory/inventory-container"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.901
+anchor_top = 0.046
+anchor_right = 0.944
+anchor_bottom = 0.176
+offset_left = -15.032
+offset_top = 7.882
+offset_right = -10.008
+offset_bottom = 3.592
+theme_override_styles/hover = SubResource("StyleBoxFlat_86mrq")
+theme_override_styles/normal = SubResource("StyleBoxFlat_wrkgn")
+icon = ExtResource("36_ttoml")
+expand_icon = true
+
+[node name="inventory-btn" type="Button" parent="CanvasLayer/Inventory"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.018
+anchor_top = 0.05
+anchor_right = 0.026
+anchor_bottom = 0.059
+offset_left = 84.53
+offset_top = -4.0
+offset_right = 142.21
+offset_bottom = 7.38
+theme_override_fonts/font = ExtResource("24_cfvhu")
+theme_override_font_sizes/font_size = 5
+theme_override_styles/hover = SubResource("StyleBoxFlat_fbuj2")
+theme_override_styles/normal = SubResource("StyleBoxFlat_dak4d")
+text = "Inventory"
+icon = ExtResource("37_ocb40")
+alignment = 0
 
 [node name="Mailbox" type="Node2D" parent="."]
 position = Vector2(359, 211)
@@ -2889,3 +2946,5 @@ shape = SubResource("RectangleShape2D_1i48b")
 [connection signal="pressed" from="CanvasLayer/Chat/Dialogue-1-radio/Next" to="CanvasLayer/Chat" method="_to_dialogue2"]
 [connection signal="pressed" from="CanvasLayer/Chat/Dialogue-2-radio/Next" to="CanvasLayer/Chat" method="_to_dialogue3"]
 [connection signal="pressed" from="CanvasLayer/Chat/Dialogue-3-radio/Next" to="CanvasLayer/Chat" method="_to_dialogue4"]
+[connection signal="pressed" from="CanvasLayer/Inventory/inventory-container/close-btn" to="CanvasLayer/Inventory" method="_on_closebtn_pressed"]
+[connection signal="pressed" from="CanvasLayer/Inventory/inventory-btn" to="CanvasLayer/Inventory" method="_on_inventorybtn_pressed"]
