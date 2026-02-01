@@ -14,7 +14,6 @@ func _on_visible_on_screen_notifier_2d_screen_exited() -> void:
 
 
 func _on_body_entered(body: Node2D) -> void:
-	print("Bullet colliding with: ", body)
 	var health_component = body.find_child("HealthComponent")
 	if health_component and health_component is HealthComponent:
 		if body in enemies_hit:

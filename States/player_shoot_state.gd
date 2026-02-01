@@ -7,7 +7,6 @@ class_name PlayerShoot
 @export var SPEED: float
 
 func Enter() -> void:
-	print("in shooting state")
 	character_body.velocity.x = move_toward(character_body.velocity.x, 0, SPEED)
 	animated_sprite.play("fire")
 	animated_sprite.flip_h = true
@@ -18,5 +17,4 @@ func Exit() -> void:
 
 
 func _on_shoot_timer_timeout() -> void:
-	print("shooting timer timeout")
 	Transitioned.emit(self, "idle")

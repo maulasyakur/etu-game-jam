@@ -141,6 +141,6 @@ initial_state = NodePath("Chase")
 [node name="Chase" type="Node" parent="StateMachine" node_paths=PackedStringArray("character_body")]
 script = ExtResource("6_wujgv")
 character_body = NodePath("../..")
-speed = 150.0
+speed = 50.0
 
 [connection signal="health_depleted" from="HealthComponent" to="." method="_on_health_component_health_depleted"]
