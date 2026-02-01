@@ -74,11 +74,20 @@ func update_animation():
 		animated_sprite_2d.flip_h = need_flip
 		current_animation = new_animation
 
-func _on_area_2d_body_entered(body: Node2D) -> void:
+func _on_area_ladder_body_entered(body: Node2D) -> void:
 	print("player entered stair area")
 	on_ladder = true
 	velocity.y = 0  # Reset vertical velocity when grabbing ladder
 
-func _on_area_2d_body_exited(body: Node2D) -> void:
+func _on_area_ladder_body_exited(body: Node2D) -> void:
 	print("player exited stair area")
 	on_ladder = false
+
+
+func _on_area_plant_body_entered(body: Node2D) -> void:
+	print(body)
+
+
+
+func _on_area_plant_body_exited(body: Node2D) -> void:
+	print(body)
