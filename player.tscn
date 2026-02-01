@@ -163,10 +163,11 @@ shape = SubResource("CapsuleShape2D_5vw27")
 position = Vector2(0, 3)
 scale = Vector2(0.559232, 0.559232)
 sprite_frames = SubResource("SpriteFrames_qsp4k")
+animation = &"run"
 autoplay = "default"
 
 [node name="Camera2D" type="Camera2D" parent="."]
-scale = Vector2(1.63536, 1.743)
+offset = Vector2(0, -30)
 position_smoothing_enabled = true
 
 [node name="Gun" parent="." instance=ExtResource("4_hqtel")]
