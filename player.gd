@@ -1,28 +1,84 @@
 extends CharacterBody2D
 
+@onready var animated_sprite_2d: AnimatedSprite2D = $AnimatedSprite2D
+
 const SPEED = 100.0
 const JUMP_VELOCITY = -200.0
+var on_ladder: bool = false
+var is_running: bool = false
+var was_on_floor: bool = true
+var current_animation: String = ""
 
-@onready var animated_sprite_2d: AnimatedSprite2D = $AnimatedSprite2D
-		   
 func _physics_process(delta: float) -> void:
-	# Add the gravity.
-	if not is_on_floor():
+	# Handle gravity (except when on ladder)
+	if not is_on_floor() and not on_ladder:
 		velocity += get_gravity() * delta
-#
-	## Handle jump.
-	#if Input.is_action_pressed("jump") and is_on_floor():
-		#velocity.y = JUMP_VELOCITY
-#
-	## Get the input direction and handle the movement/deceleration.
-	## As good practice, you should replace UI actions with custom gameplay actions.
-	#var direction := Input.get_axis("left", "right")
-	#if direction:
-		#velocity.x = direction * SPEED
-		#animated_sprite_2d.flip_h = (direction < 0)
-		#animated_sprite_2d.play("run")
-	#else:
-		#velocity.x = move_toward(velocity.x, 0, SPEED)
-		#animated_sprite_2d.play("default")
-
+	
+	# Handle jump
+	if Input.is_action_just_pressed("jump") and is_on_floor():
+		velocity.y = JUMP_VELOCITY
+	
+	# Get input direction
+	var direction := Input.get_axis("left", "right")
+	
+	# Handle horizontal movement (except when on ladder)
+	if not on_ladder:
+		if direction:
+			velocity.x = direction * SPEED
+			is_running = true
+		else:
+			velocity.x = move_toward(velocity.x, 0, SPEED)
+			is_running = false
+		
+		# Flip sprite based on direction
+		if direction != 0:
+			animated_sprite_2d.flip_h = direction < 0
+	
+	# Handle ladder movement
+	if on_ladder:
+		velocity.x = direction * SPEED
+		# Disable gravity on ladder
+		velocity.y = 0
+		
+		var vertical_dir = Input.get_axis("climb_up", "climp_down")  # Note: typo "climp_down"
+		if vertical_dir:
+			velocity.y = vertical_dir * SPEED
+		else:
+			velocity.y = move_toward(velocity.y, 0, SPEED)  # Fixed: velocity.y not velocity.x
+	
+	# Update animation based on state
+	update_animation()
+	
 	move_and_slide()
+
+func update_animation():
+	var new_animation = "default"
+	var need_flip = false
+	
+	if on_ladder:
+		if abs(velocity.y) > 10:  # If moving on ladder
+			new_animation = "naik_tangga"
+		else:
+			new_animation = "default"  # Idle on ladder
+	elif not is_on_floor():
+		new_animation = "jump"
+	elif is_running and abs(velocity.x) > 10:
+		new_animation = "run"
+	else:
+		new_animation = "default"
+		need_flip = true
+	
+	# Only play animation if it's different from current one
+	if new_animation != current_animation:
+		animated_sprite_2d.play(new_animation)
+		animated_sprite_2d.flip_h = need_flip
+		current_animation = new_animation
+
+func _on_area_2d_body_entered(body: Node2D) -> void:
+	print("player entered stair area")
+	on_ladder = true
+	velocity.y = 0  # Reset vertical velocity when grabbing ladder
+
+func _on_area_2d_body_exited(body: Node2D) -> void:
+	print("player exited stair area")
+	on_ladder = false

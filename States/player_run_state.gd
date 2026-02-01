@@ -9,6 +9,8 @@ func Enter() -> void:
 	animated_sprite.play("run")
 	
 func Physics_Update(delta: float) -> void:
+	if not character_body.is_on_floor():
+		character_body.velocity += character_body.get_gravity() * delta
 	# Handle jump.
 	if Input.is_action_pressed("jump") and character_body.is_on_floor():
 		Transitioned.emit(self, "jump")

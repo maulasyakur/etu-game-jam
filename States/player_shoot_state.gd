@@ -15,6 +15,9 @@ func Enter() -> void:
 func Exit() -> void:
 	animated_sprite.flip_h = false
 
+func Physics_Update(delta) -> void:
+	if not character_body.is_on_floor():
+		character_body.velocity += character_body.get_gravity() * delta
 
 func _on_shoot_timer_timeout() -> void:
 	Transitioned.emit(self, "idle")
