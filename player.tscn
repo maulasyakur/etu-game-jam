@@ -229,6 +229,8 @@ autoplay = "default"
 frame = 1
 frame_progress = 0.949379
 
+[node name="covid-masked" type="AnimatedSprite2D" parent="."]
+
 [node name="Camera2D" type="Camera2D" parent="."]
 offset = Vector2(0, -30)
 position_smoothing_enabled = true

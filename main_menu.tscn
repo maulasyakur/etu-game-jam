@@ -1,10 +1,11 @@
-[gd_scene load_steps=10 format=3 uid="uid://buj4qjvxa8xss"]
+[gd_scene load_steps=11 format=3 uid="uid://buj4qjvxa8xss"]
 
 [ext_resource type="FontFile" uid="uid://j40kqe48hi7w" path="res://Minecraft.ttf" id="1_06t4h"]
 [ext_resource type="Texture2D" uid="uid://dguj2mavty32x" path="res://free-swamp-game-tileset-pixel-art/2 Background/Background.png" id="1_fu7sn"]
 [ext_resource type="Script" uid="uid://dkoim0umgy8n4" path="res://main_menu.gd" id="1_jix8l"]
 [ext_resource type="AudioStream" uid="uid://d1jh1ia67xccc" path="res://Quaint Town.wav" id="2_glbon"]
 [ext_resource type="Texture2D" uid="uid://dmb7b46qoskk5" path="res://Complete_UI_Book_Styles_Pack_Free_v1.0/01_TravelBookLite/Sprites/UI_TravelBook_Frame01a.png" id="2_jix8l"]
+[ext_resource type="AudioStream" uid="uid://dld77c1vxfdw6" path="res://mixkit-mouse-click-close-1113.wav" id="2_nlkkf"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_glbon"]
 texture = ExtResource("1_fu7sn")
@@ -27,6 +28,9 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_jix8l")
+
+[node name="Mixkit-mouse-click-close-1113" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("2_nlkkf")
 
 [node name="QuaintTown" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("2_glbon")
