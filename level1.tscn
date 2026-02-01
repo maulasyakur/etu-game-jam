@@ -1159,7 +1159,7 @@ texture = ExtResource("5_nauge")
 
 [sub_resource type="TileSet" id="TileSet_272bh"]
 uv_clipping = true
-physics_layer_0/collision_layer = 1
+physics_layer_0/collision_layer = 8
 sources/0 = SubResource("TileSetAtlasSource_7mycd")
 sources/2 = SubResource("TileSetAtlasSource_272bh")
 sources/9 = SubResource("TileSetAtlasSource_5vw27")
@@ -2294,6 +2294,7 @@ position = Vector2(555, 138)
 
 [node name="StaticBody2D" type="StaticBody2D" parent="Limit Right"]
 position = Vector2(226, -135.5)
+collision_layer = 8
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Limit Right/StaticBody2D"]
 position = Vector2(-189, 124.5)
@@ -2304,6 +2305,7 @@ position = Vector2(-121, 60)
 
 [node name="StaticBody2D" type="StaticBody2D" parent="Limit Left"]
 position = Vector2(226, -135.5)
+collision_layer = 8
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Limit Left/StaticBody2D"]
 position = Vector2(-227, 137.5)
@@ -2314,6 +2316,7 @@ position = Vector2(-121, 60)
 
 [node name="StaticBody2D" type="StaticBody2D" parent="Limit Left2"]
 position = Vector2(311, 48)
+collision_layer = 8
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Limit Left2/StaticBody2D"]
 position = Vector2(-9, 14)
@@ -2344,6 +2347,7 @@ centered = false
 position = Vector2(388, 244)
 
 [node name="Area2D" type="Area2D" parent="Box 1"]
+collision_layer = 8
 
 [node name="Sprite2D" type="Sprite2D" parent="Box 1/Area2D"]
 position = Vector2(165.346, 139)
@@ -2374,6 +2378,7 @@ position = Vector2(510, 141)
 
 [node name="StaticBody2D" type="StaticBody2D" parent="Limit Right2"]
 position = Vector2(226, -135.5)
+collision_layer = 8
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Limit Right2/StaticBody2D"]
 position = Vector2(-189, 124.5)
@@ -2398,6 +2403,7 @@ position = Vector2(512, 209)
 
 [node name="StaticBody2D" type="StaticBody2D" parent="Bed"]
 position = Vector2(1, 2.5)
+collision_layer = 8
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Bed/StaticBody2D"]
 position = Vector2(3, 5)
