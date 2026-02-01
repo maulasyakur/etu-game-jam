@@ -1,4 +1,4 @@
-[gd_scene load_steps=80 format=4 uid="uid://bk68wfu7nw01"]
+[gd_scene load_steps=83 format=4 uid="uid://bk68wfu7nw01"]
 
 [ext_resource type="Texture2D" uid="uid://cbgc4p0fgpsm" path="res://brackeys_platformer_assets/sprites/world_tileset.png" id="1_3l65w"]
 [ext_resource type="Texture2D" uid="uid://be4yp688oujin" path="res://Dungeon Tile Set.png" id="2_rjtee"]
@@ -8,18 +8,19 @@
 [ext_resource type="Texture2D" uid="uid://dguj2mavty32x" path="res://free-swamp-game-tileset-pixel-art/2 Background/Background.png" id="6_ycv2e"]
 [ext_resource type="Texture2D" uid="uid://ctnwhhq68olr" path="res://Pale/ground&houses2.png" id="7_c5gc3"]
 [ext_resource type="Texture2D" uid="uid://ceq02yuhw75a2" path="res://free-swamp-game-tileset-pixel-art/3 Objects/Boxes/4.png" id="8_6e4cv"]
-[ext_resource type="Script" path="res://box_1.gd" id="8_d78wo"]
+[ext_resource type="Script" uid="uid://bmaaj3cb0pac4" path="res://box_1.gd" id="8_d78wo"]
 [ext_resource type="Texture2D" uid="uid://unq64qg70fr0" path="res://bush.png" id="9_jy3fw"]
 [ext_resource type="Texture2D" uid="uid://bksg152xvtgkh" path="res://GandalfHardcore FREE Platformer Assets/Decor.png" id="9_uuy0h"]
 [ext_resource type="Texture2D" uid="uid://dj4m2h0hb5isf" path="res://mailbox.PNG" id="10_6tyme"]
 [ext_resource type="PackedScene" uid="uid://64301svl7id2" path="res://player.tscn" id="10_52iny"]
 [ext_resource type="AudioStream" uid="uid://c6iirce13e3n" path="res://Mining at Dusk.wav" id="11_nxqqj"]
-[ext_resource type="Script" path="res://bed.gd" id="12_qiqrj"]
+[ext_resource type="Script" uid="uid://cjguciv5gkpsu" path="res://bed.gd" id="12_qiqrj"]
 [ext_resource type="Texture2D" uid="uid://otgk7gsjwhbx" path="res://kasur.PNG" id="12_uuy0h"]
 [ext_resource type="Script" uid="uid://b2m8wqgdh0j2d" path="res://chat.gd" id="13_1idop"]
 [ext_resource type="FontFile" uid="uid://qadiu66m1218" path="res://brackeys_platformer_assets/fonts/PixelOperator8.ttf" id="13_5le63"]
 [ext_resource type="Texture2D" uid="uid://cgyneqwki4fqe" path="res://Complete_UI_Book_Styles_Pack_Free_v1.0/01_TravelBookLite/Sprites/UI_TravelBook_Popup01a.png" id="13_43lh3"]
 [ext_resource type="FontFile" uid="uid://j40kqe48hi7w" path="res://Minecraft.ttf" id="14_5le63"]
+[ext_resource type="Script" uid="uid://b0elhrpat4o3s" path="res://plant.gd" id="15_o45kq"]
 [ext_resource type="Texture2D" uid="uid://kmgag7g106d7" path="res://radio.png" id="15_pieet"]
 [ext_resource type="Texture2D" uid="uid://c003vjf7h84kc" path="res://Complete_UI_Book_Styles_Pack_Free_v1.0/01_TravelBookLite/Sprites/UI_TravelBook_IconArrow01a.png" id="16_rjtee"]
 [ext_resource type="Texture2D" uid="uid://bbjman581jyh3" path="res://ruby-profile.PNG" id="18_6e4cv"]
@@ -29,21 +30,21 @@
 [ext_resource type="Texture2D" uid="uid://bdb6km8ni4t06" path="res://Complete_UI_Book_Styles_Pack_Free_v1.0/01_TravelBookLite/Sprites/UI_TravelBook_IconEnergy01a.png" id="20_c5gc3"]
 [ext_resource type="Texture2D" uid="uid://7de6h17n04jf" path="res://Complete_UI_Book_Styles_Pack_Free_v1.0/01_TravelBookLite/Sprites/UI_TravelBook_IconGear01a.png" id="20_ycv2e"]
 [ext_resource type="Theme" uid="uid://bnvs0xiq3uogi" path="res://menu_theme.tres" id="23_43lh3"]
-[ext_resource type="Script" path="res://stats.gd" id="24_6tyme"]
+[ext_resource type="Script" uid="uid://d0uphlj617knj" path="res://stats.gd" id="24_6tyme"]
 [ext_resource type="Texture2D" uid="uid://b8tml55ncck00" path="res://Complete_UI_Book_Styles_Pack_Free_v1.0/01_TravelBookLite/Sprites/UI_TravelBook_IconHome01a.png" id="24_52iny"]
 [ext_resource type="Texture2D" uid="uid://bjnftexfdn78y" path="res://Complete_UI_Book_Styles_Pack_Free_v1.0/01_TravelBookLite/Sprites/UI_TravelBook_HandleDropdown01a.png" id="24_pieet"]
 [ext_resource type="Texture2D" uid="uid://dn04fboxw2x2k" path="res://music-logo.png" id="25_nxqqj"]
 [ext_resource type="FontFile" uid="uid://2avntto0a01j" path="res://brackeys_platformer_assets/fonts/PixelOperator8-Bold.ttf" id="25_xm42n"]
-[ext_resource type="Script" path="res://menu_button.gd" id="26_7nyxr"]
+[ext_resource type="Script" uid="uid://bi1882dw8seur" path="res://menu_button.gd" id="26_7nyxr"]
 [ext_resource type="Texture2D" uid="uid://bt47s72nt7mq" path="res://Complete_UI_Book_Styles_Pack_Free_v1.0/01_TravelBookLite/Sprites/UI_TravelBook_IconCoin01a.png" id="26_lslib"]
 [ext_resource type="Texture2D" uid="uid://bafvy28qhy43r" path="res://Complete_UI_Book_Styles_Pack_Free_v1.0/01_TravelBookLite/Sprites/UI_TravelBook_FrameSelect01b.png" id="32_6wmxb"]
 [ext_resource type="Texture2D" uid="uid://bvu81m2ma84ry" path="res://Complete_UI_Book_Styles_Pack_Free_v1.0/01_TravelBookLite/Sprites/UI_TravelBook_BookCover01a.png" id="34_t8chk"]
-[ext_resource type="Script" path="res://inventory.gd" id="35_ktasi"]
+[ext_resource type="Script" uid="uid://d1yp5b0jr1da0" path="res://inventory.gd" id="35_ktasi"]
 [ext_resource type="Texture2D" uid="uid://don1m8p2ogc0n" path="res://apple.png" id="35_xhed0"]
 [ext_resource type="Texture2D" uid="uid://d1ouxcajw1gtf" path="res://Complete_UI_Book_Styles_Pack_Free_v1.0/01_TravelBookLite/Sprites/UI_TravelBook_IconCross01a.png" id="38_hxcog"]
-[ext_resource type="Script" path="res://notiffication_bar.gd" id="39_bi6q3"]
+[ext_resource type="Script" uid="uid://bngy2wuaw7v3b" path="res://notiffication_bar.gd" id="39_bi6q3"]
 [ext_resource type="Texture2D" uid="uid://cnogd0nhatqii" path="res://covid-mask.PNG" id="43_2cjx3"]
-[ext_resource type="Script" path="res://box_2.gd" id="43_qx55u"]
+[ext_resource type="Script" uid="uid://detjh7iraaepi" path="res://box_2.gd" id="43_qx55u"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_7mycd"]
 texture = ExtResource("1_3l65w")
@@ -2343,6 +2344,12 @@ bg_color = Color(0.6, 0.6, 0.6, 0)
 bg_color = Color(0.243137, 0.537255, 0.831373, 1)
 corner_detail = 1
 
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_qx55u"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_o45kq"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_bi6q3"]
 bg_color = Color(0.6, 0.6, 0.6, 0)
 corner_detail = 1
@@ -2350,12 +2357,6 @@ corner_detail = 1
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_hxcog"]
 bg_color = Color(0.6, 0.6, 0.6, 0)
 corner_detail = 1
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_qx55u"]
-bg_color = Color(0.6, 0.6, 0.6, 0)
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_o45kq"]
-bg_color = Color(0.6, 0.6, 0.6, 0)
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_1idop"]
 bg_color = Color(0.6, 0.6, 0.6, 0)
@@ -2387,6 +2388,21 @@ border_color = Color(0.8, 0.8, 0.8, 0)
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_lslib"]
 bg_color = Color(0.6, 0.6, 0.6, 0)
 border_color = Color(0.8, 0.8, 0.8, 0)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_qx55u"]
+size = Vector2(33, 36.5)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_lp4dg"]
+bg_color = Color(1, 0.843137, 0.658824, 1)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(0.286275, 0.2, 0.2, 1)
+corner_radius_top_left = 2
+corner_radius_top_right = 2
+corner_radius_bottom_right = 2
+corner_radius_bottom_left = 2
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ycl4i"]
 bg_color = Color(0.995212, 0.734121, 0.48036, 1)
@@ -2714,26 +2730,44 @@ texture = ExtResource("20_c5gc3")
 [node name="bleed_timer" type="Timer" parent="CanvasLayer/stats/Hungerbar"]
 wait_time = 5.0
 
+[node name="inventory-btn" type="Button" parent="CanvasLayer"]
+anchors_preset = -1
+anchor_left = 0.018
+anchor_top = 0.05
+anchor_right = 0.026
+anchor_bottom = 0.059
+offset_left = 138.52
+offset_top = -5.0
+offset_right = 196.2
+offset_bottom = 6.38
+theme_override_fonts/font = ExtResource("13_5le63")
+theme_override_font_sizes/font_size = 5
+theme_override_styles/hover = SubResource("StyleBoxFlat_qx55u")
+theme_override_styles/normal = SubResource("StyleBoxFlat_o45kq")
+text = "Inventory"
+icon = ExtResource("26_lslib")
+alignment = 0
+
 [node name="Inventory" type="Control" parent="CanvasLayer"]
+visible = false
 layout_mode = 3
 anchors_preset = 0
 offset_left = 50.0
-offset_right = 465.0
-offset_bottom = 180.0
+offset_right = 323.0
+offset_bottom = 114.0
 script = ExtResource("35_ktasi")
 
 [node name="inventory-container" type="TextureRect" parent="CanvasLayer/Inventory"]
-visible = false
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -149.5
-offset_top = -82.0
-offset_right = 82.4999
-offset_bottom = 51.0
+offset_left = -107.5
+offset_top = -47.0
+offset_right = 124.5
+offset_bottom = 86.0
 grow_horizontal = 2
 grow_vertical = 2
 texture = ExtResource("34_t8chk")
@@ -2774,25 +2808,6 @@ theme_override_styles/hover = SubResource("StyleBoxFlat_bi6q3")
 theme_override_styles/normal = SubResource("StyleBoxFlat_hxcog")
 icon = ExtResource("38_hxcog")
 expand_icon = true
-
-[node name="inventory-btn" type="Button" parent="CanvasLayer/Inventory"]
-layout_mode = 1
-anchors_preset = -1
-anchor_left = 0.018
-anchor_top = 0.05
-anchor_right = 0.026
-anchor_bottom = 0.059
-offset_left = 84.53
-offset_top = -4.0
-offset_right = 142.21
-offset_bottom = 7.38
-theme_override_fonts/font = ExtResource("13_5le63")
-theme_override_font_sizes/font_size = 5
-theme_override_styles/hover = SubResource("StyleBoxFlat_qx55u")
-theme_override_styles/normal = SubResource("StyleBoxFlat_o45kq")
-text = "Inventory"
-icon = ExtResource("26_lslib")
-alignment = 0
 
 [node name="Chat" type="Control" parent="CanvasLayer"]
 layout_mode = 3
@@ -3185,16 +3200,13 @@ theme_override_styles/normal = SubResource("StyleBoxFlat_qiqrj")
 text = "To-do List"
 icon = ExtResource("24_pieet")
 alignment = 0
-item_count = 3
+item_count = 2
 popup/item_0/text = "Plant a Tomato / Grape / Lemon"
 popup/item_0/checkable = 1
 popup/item_0/id = 0
-popup/item_1/text = "Build Fences around the house"
+popup/item_1/text = "Wear the mask inside the house"
 popup/item_1/checkable = 1
-popup/item_1/id = 1
-popup/item_2/text = "Fix the windows"
-popup/item_2/checkable = 1
-popup/item_2/id = 2
+popup/item_1/id = 2
 
 [node name="MenuButton" type="MenuButton" parent="CanvasLayer"]
 anchors_preset = -1
@@ -3273,6 +3285,34 @@ theme_override_styles/pressed = SubResource("StyleBoxFlat_2cjx3")
 theme_override_styles/normal = SubResource("StyleBoxFlat_lslib")
 text = "x"
 
+[node name="Plant" type="Node2D" parent="."]
+position = Vector2(316, 213)
+script = ExtResource("15_o45kq")
+
+[node name="detector" type="Area2D" parent="Plant"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Plant/detector"]
+position = Vector2(-4.5, -1.75)
+shape = SubResource("RectangleShape2D_qx55u")
+
+[node name="bush" type="Sprite2D" parent="Plant/detector"]
+visible = false
+position = Vector2(-4.99999, 4.00001)
+scale = Vector2(0.679688, 0.664062)
+texture = ExtResource("9_jy3fw")
+
+[node name="Button" type="Button" parent="Plant"]
+visible = false
+offset_left = -32.0
+offset_top = -26.0
+offset_right = 27.0
+offset_bottom = -14.0
+theme_override_colors/font_color = Color(0.286275, 0.2, 0.2, 1)
+theme_override_fonts/font = ExtResource("14_5le63")
+theme_override_font_sizes/font_size = 5
+theme_override_styles/normal = SubResource("StyleBoxFlat_lp4dg")
+text = "Plant Grape Bush"
+
 [node name="Box 2" type="Node2D" parent="."]
 position = Vector2(313, 75)
 script = ExtResource("43_qx55u")
@@ -3315,11 +3355,15 @@ text_overrun_behavior = 3
 [connection signal="body_exited" from="Bed/Area2D" to="Bed" method="_on_area_2d_body_exited"]
 [connection signal="pressed" from="Bed/E" to="Bed" method="_on_e_pressed"]
 [connection signal="timeout" from="CanvasLayer/stats/Hungerbar/bleed_timer" to="CanvasLayer/stats" method="_on_bleed_timer_timeout"]
+[connection signal="pressed" from="CanvasLayer/inventory-btn" to="CanvasLayer/Inventory" method="_on_inventorybtn_pressed"]
 [connection signal="pressed" from="CanvasLayer/Inventory/inventory-container/close-btn" to="CanvasLayer/Inventory" method="_on_closebtn_pressed"]
-[connection signal="pressed" from="CanvasLayer/Inventory/inventory-btn" to="CanvasLayer/Inventory" method="_on_inventorybtn_pressed"]
 [connection signal="pressed" from="CanvasLayer/Chat/Dialogue-1-radio/Next" to="CanvasLayer/Chat" method="_to_dialogue2"]
 [connection signal="pressed" from="CanvasLayer/Chat/Dialogue-2-radio/Next" to="CanvasLayer/Chat" method="_to_dialogue3"]
 [connection signal="pressed" from="CanvasLayer/Chat/Dialogue-3-radio/Next" to="CanvasLayer/Chat" method="_to_dialogue4"]
 [connection signal="pressed" from="CanvasLayer/Chat/Dialogue-4-radio/Next" to="CanvasLayer/Chat" method="_to_dialogue5"]
 [connection signal="pressed" from="CanvasLayer/Chat/Dialogue-5-radio/Next" to="CanvasLayer/Chat" method="_close_dialogue5"]
 [connection signal="pressed" from="CanvasLayer/notifficationBar/closeBtn" to="CanvasLayer/notifficationBar" method="_on_button_pressed"]
+[connection signal="body_entered" from="Plant/detector" to="Plant" method="_on_detector_body_entered"]
+[connection signal="body_exited" from="Plant/detector" to="Plant" method="_on_detector_body_exited"]
+[connection signal="pressed" from="Plant/Button" to="Plant" method="_on_button_pressed"]
+[connection signal="body_entered" from="Box 2/Area2D" to="Box 2" method="_on_area_2d_body_entered"]

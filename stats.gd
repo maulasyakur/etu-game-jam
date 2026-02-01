@@ -13,7 +13,7 @@ var max_energy = 5
 var warn_energy = 2
 
 func _ready():
-	$'Hungerbar/bleed_timer'.wait_time = 2 #testing doang
+	$'Hungerbar/bleed_timer'.wait_time = 90 #testing doang
 	$'Hungerbar/bleed_timer'.start()
 
 func _on_bleed_timer_timeout():

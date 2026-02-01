@@ -8,6 +8,7 @@ var on_ladder: bool = false
 var is_running: bool = false
 var was_on_floor: bool = true
 var current_animation: String = ""
+var wearing_mask := false
 
 func _physics_process(delta: float) -> void:
 	# Handle gravity (except when on ladder)
@@ -54,25 +55,27 @@ func _physics_process(delta: float) -> void:
 func update_animation():
 	var new_animation = "default"
 	var need_flip = false
-	
+
 	if on_ladder:
-		if abs(velocity.y) > 10:  # If moving on ladder
-			new_animation = "naik_tangga"
+		if abs(velocity.y) > 10:
+			new_animation = "covid_naik_tangga" if  wearing_mask else "naik_tangga"
 		else:
-			new_animation = "default"  # Idle on ladder
+			new_animation = "covid_default" if wearing_mask else "default"
+
 	elif not is_on_floor():
-		new_animation = "jump"
+		new_animation = "covid_jump" if wearing_mask else "jump"
+
 	elif is_running and abs(velocity.x) > 10:
-		new_animation = "run"
+		new_animation = "covid_walk" if wearing_mask else "run"
+
 	else:
-		new_animation = "default"
-		need_flip = true
-	
-	# Only play animation if it's different from current one
+		new_animation = "covid_default" if wearing_mask else "default"
+
+	# Only play if changed
 	if new_animation != current_animation:
 		animated_sprite_2d.play(new_animation)
-		animated_sprite_2d.flip_h = need_flip
 		current_animation = new_animation
+
 
 func _on_area_ladder_body_entered(body: Node2D) -> void:
 	print("player entered stair area")
@@ -83,11 +86,11 @@ func _on_area_ladder_body_exited(body: Node2D) -> void:
 	print("player exited stair area")
 	on_ladder = false
 
-
 func _on_area_plant_body_entered(body: Node2D) -> void:
 	print(body)
 
-
-
 func _on_area_plant_body_exited(body: Node2D) -> void:
 	print(body)
+	
+func wear_mask():
+	wearing_mask = true
